@@ -17,11 +17,12 @@ const textVariants={
         }
     },
     scrollButton:{
-        opacity:0,
+        opacity:0.2,
         y:10,
         transition:{
             duration:2,
-            repeat:Infinity
+            repeat:Infinity,
+            repeatType:'mirror'
         }
     }
 }

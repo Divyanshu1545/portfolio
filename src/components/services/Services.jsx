@@ -1,6 +1,6 @@
 import "./services.scss";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 const variants = {
   initial: { x: -500, opacity: 0, y: 100 },
   animate: {
@@ -12,8 +12,16 @@ const variants = {
 };
 
 function Services() {
+  const servicesRef = useRef();
+  const isInView = useInView(servicesRef, { margin: "-200px" });
   return (
-    <motion.div className="services" variants={variants} initial='initial' whileInView='animate'>
+    <motion.div
+      ref={servicesRef}
+      className="services"
+      variants={variants}
+      initial="initial"
+      animate={isInView && "animate"}
+    >
       <motion.div className="textContainer" variants={variants}>
         <motion.p>Your guy in the chair.</motion.p>
         <hr />
