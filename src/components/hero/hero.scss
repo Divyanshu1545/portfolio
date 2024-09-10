@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .hero {
   height: calc(100vh - 100px);
 
@@ -8,19 +10,41 @@
     max-width: 1366px;
     height: 100%;
     margin: auto;
+    @include mobile{
+      margin-top: 20px;
+     }
   }
   .imageContainer {
     z-index: 100;
     height: 100%;
+    @include mobile {
+      top: unset;
+      bottom: 0;
+      height: 50%;
+      width: 100%;
+      
+    }
+
     position: absolute;
     top: 0;
     right: 0;
     img {
       height: calc(100vh - 100px);
+      @include mobile {
+        height: 100%;
+        width: 100%;
+        object-fit:cover;
+        overflow: visible;
+
+      }
     }
   }
   .textContainer {
-    cursor:default;
+    @include mobile {
+      height: 50%;
+      width: 100%;
+    }
+    cursor: default;
     z-index: 100;
     width: 50%;
     height: 100%;
@@ -28,11 +52,19 @@
     flex-direction: column;
     justify-content: center;
     gap: 40px;
+    @include mobile {
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
     h2 {
       color: rebeccapurple;
       letter-spacing: 8px;
     }
     h1 {
+      @include mobile {
+        font-size: 35px;
+      }
       font-size: 70px;
     }
     .buttons {
@@ -54,6 +86,7 @@
           transition: 0.3s;
           font-weight: 500;
         }
+        
       }
     }
 

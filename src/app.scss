@@ -1,6 +1,11 @@
+@mixin mobile{
+  @media(max-width:738px){
+    @content
+  }
+}
 html {
     scroll-behavior: smooth;
-  scroll-snap-type: y;
+  scroll-snap-type: y mandatory;
 }
 
 section {
@@ -22,8 +27,4 @@ a{
     text-decoration: none;
     color: inherit;
 }
-@mixin mobile{
-  @media(max-width:738px){
-    @content
-  }
-}
+

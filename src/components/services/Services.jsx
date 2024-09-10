@@ -2,7 +2,7 @@ import "./services.scss";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 const variants = {
-  initial: { x: -500, opacity: 0, y: 100 },
+  initial: { x: 0, opacity: 0, y: 100 },
   animate: {
     x: 0,
     y: 0,
@@ -30,7 +30,7 @@ function Services() {
         <div className="title">
           <img src="./../../../public/people.webp" />
           <h1>
-            <b>Innovating</b> Yourmotion.
+            <b>Innovating</b> Your
           </h1>
         </div>
         <div className="title">

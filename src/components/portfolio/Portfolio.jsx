@@ -33,17 +33,17 @@ const items = [
 ];
 const Single = ({ item }) => {
   const variants = {
-    initial: {
-      opacity: 0.0,
-      x: -500,
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition:{
-        duration:2
-      }
-    },
+    // initial: {
+    //   opacity: 0.0,
+    //   x: -500,
+    // },
+    // animate: {
+    //   opacity: 1,
+    //   x: 0,
+    //   transition:{
+    //     duration:2
+    //   }
+    // },
   };
   const ref = useRef();
   const { scrollYProgress } = useScroll({
