@@ -1,12 +1,12 @@
 @import "../../app.scss";
 .portfolio {
+  position: relative;
   @include mobile{
     transform: none !important;
     margin-top: 100px;
     opacity:1 ;
 
   }
-  position: relative;
   .progress {
     position: sticky;
     align-self: flex-start;

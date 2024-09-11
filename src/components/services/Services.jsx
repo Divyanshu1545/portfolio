@@ -10,7 +10,39 @@ const variants = {
     transition: { duration: 1, staggerChildren: 0.1 },
   },
 };
-
+const items = [
+  {
+    id: 1,
+    title: "Backend Development",
+    desc: " Using Java Spring Boot to build back-end systems, including REST APIs and microservices. It simplifies complex backend tasks with minimal configuration.",
+  },
+  {
+    id: 2,
+    title: "Mobile Applications",
+    desc: "  Developing cross-platform mobile apps using Flutter for Android and iOS. Flutter offers fast development with a single codebase.",
+  },
+  {
+    id: 3,
+    title: "Frontend Development",
+    desc: "  Building responsive user interfaces with React for web applications. React allows for efficient updates and a smooth UX for the user",
+  },
+  {
+    id: 4,
+    title: "Fullstack Development",
+    desc: "  Combining React and Spring Boot to deliver full stack applications. This enables seamless integration between front-end and back-end technologies.",
+  },
+];
+function ServiceItem({ item }) {
+  return (
+    <motion.div
+      className="box"
+      whileHover={{ backgroundColor: "lightgray", color: "black",transition:{duration:0.3} }}
+    >
+      <h2>{item.title}</h2>
+      <p>{item.desc}</p>
+    </motion.div>
+  );
+}
 function Services() {
   const servicesRef = useRef();
   const isInView = useInView(servicesRef, { margin: "-200px" });
@@ -37,54 +69,13 @@ function Services() {
           <h1>
             <b>Digital</b> Journey
           </h1>
-          <button>What we do</button>
+          <button>What I do</button>
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ backgroundColor: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Non elit duis elit aliqua eiusmod consectetur consectetur aliqua
-            pariatur. consectetur consectetur aliqua pariatur.
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ backgroundColor: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Non elit duis elit aliqua eiusmod consectetur consectetur aliqua
-            pariatur. consectetur consectetur aliqua pariatur.
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ backgroundColor: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Non elit duis elit aliqua eiusmod consectetur consectetur aliqua
-            pariatur. consectetur consectetur aliqua pariatur.
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ backgroundColor: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Non elit duis elit aliqua eiusmod consectetur consectetur aliqua
-            pariatur. consectetur consectetur aliqua pariatur.
-          </p>
-          <button>Go</button>
-        </motion.div>
+        {items.map((item) => (
+          <ServiceItem item={item} key={item.id} />
+        ))}
       </motion.div>
     </motion.div>
   );

@@ -10,11 +10,20 @@ function Cursor() {
 
     window.addEventListener("mousemove", moveMouse);
     return () => {
-      window.removeEventListener("mousemove",moveMouse);
+      window.removeEventListener("mousemove", moveMouse);
     };
-});
-console.log(position);
-  return <motion.div animate={{x:position.x+10,y:position.y+10,transition:{duration:0.2}}} className="cursor"></motion.div>;
+  });
+
+  return (
+    <motion.div
+      animate={{
+        x: position.x + 10,
+        y: position.y + 10,
+        transition: { duration: 0.2 },
+      }}
+      className="cursor"
+    ></motion.div>
+  );
 }
 
 export default Cursor;
