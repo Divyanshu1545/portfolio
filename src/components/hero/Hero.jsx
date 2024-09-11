@@ -1,7 +1,7 @@
 import React from "react";
 import "./hero.scss";
-import hero from "./../../../public/Hero-transformed_upscaled.png";
-import scroll from "./../../../public/scroll.png";
+import hero from "/Hero-transformed_upscaled.png";
+import scroll from "/scroll.png";
 import { animate, motion } from "framer-motion";
 const textVariants = {
   initial: {

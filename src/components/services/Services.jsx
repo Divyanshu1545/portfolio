@@ -60,7 +60,7 @@ function Services() {
       </motion.div>
       <motion.div className="titleContainer" variants={variants}>
         <div className="title">
-          <motion.img src="./../../../public/wp1951680.webp" />
+          <motion.img src="/wp1951680.webp" />
           <h1>
             <b>Innovating</b> Your
           </h1>
