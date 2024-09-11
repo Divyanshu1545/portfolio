@@ -33,17 +33,17 @@ const items = [
 ];
 const Single = ({ item }) => {
   const variants = {
-    // initial: {
-    //   opacity: 0.0,
-    //   x: -500,
-    // },
-    // animate: {
-    //   opacity: 1,
-    //   x: 0,
-    //   transition:{
-    //     duration:2
-    //   }
-    // },
+    initial: {
+      opacity: 0.0,
+      x: -200,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition:{
+        duration:2
+      }
+    },
   };
   const ref = useRef();
   const { scrollYProgress } = useScroll({
@@ -54,7 +54,13 @@ const Single = ({ item }) => {
 
   return (
     <section>
-      <motion.div ref={ref} initial='initial' whileInView='animate' variants={variants} className="container">
+      <motion.div
+        ref={ref}
+        initial="initial"
+        whileInView="animate"
+        variants={variants}
+        className="container"
+      >
         <motion.div className="wrapper">
           <motion.div className="imageContainer">
             <img src={item.image} />

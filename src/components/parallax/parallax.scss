@@ -36,12 +36,12 @@
     position: absolute;
     z-index: 2;
     @include mobile {
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
   .stars {
-    background-image: url("./../../../public/stars.png");
+    background-image: url("/stars.png");
     background-size: cover;
     background-position: bottom;
     width: 100%;
@@ -49,8 +49,8 @@
     position: absolute;
     z-index: 1;
     @include mobile {
-        background-size: contain;
-        // background-repeat: no-repeat;
-      }
+      background-size: contain;
+      // background-repeat: no-repeat;
+    }
   }
 }

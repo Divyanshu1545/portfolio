@@ -8,26 +8,26 @@
   }
   position: relative;
   .progress {
-    @include mobile {
-      display: none;
-    }
     position: sticky;
+    align-self: flex-start;
     top: 0;
     left: 0;
-    padding-top: 50px;
+    // padding-top: 50px;
     text-align: center;
     color: orange;
-    h1 {
-      font-size: 40px;
-      @include mobile {
-        font-size: 25px;
+    font-size: 36px;
+
+    @include mobile {
+      h1{
+        display: none;
       }
+      // padding-top: calc(100vh - 100px);
+      font-size: 24px;
     }
+
     .progressBar {
-      margin-top: 20px;
       height: 10px;
       background-color: white;
-      border-radius: 50px;
     }
   }
   .container {
@@ -56,11 +56,14 @@
       gap: 50px;
       .imageContainer {
         @include mobile {
+          // padding-top: 100px;
           width: 100%;
           max-height: 300px;
+          flex: unset;
           transform: none !important;
+          
          }
-        flex: 1;
+        // flex: 1;
         height: 50%;
         img {
           height: 100%;
@@ -75,6 +78,7 @@
           text-align: center;
           padding: 10px; 
           align-items: center;    
+          flex: unset;
         }
         flex: 1;
         display: flex;
