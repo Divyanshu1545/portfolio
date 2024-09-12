@@ -1,4 +1,6 @@
+@import '../../app.scss';
 .skillsPage {
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +14,12 @@
 
 .wrapper {
   display: flex;
+  @include mobile{
+    flex-direction: column;
+    gap: 40px;
+  align-items: flex-start;
+
+  }
   align-items: center;
   justify-content: space-between;
   max-width: 1366px;
@@ -26,6 +34,9 @@
   flex:2;
 
   h2 {
+    @include mobile{
+      font-size: 48px;
+    }
     font-size: 78px;
     color: white;
     margin: 0;
@@ -100,7 +111,7 @@
     }
   }
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) !important;
     background-color: gray;
     h2 {color: orange;}
     .proficiency {

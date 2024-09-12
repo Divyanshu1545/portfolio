@@ -5,6 +5,9 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  @include mobile {
+    margin-top: 280px;
+  }
   justify-content: space-between;
   .textContainer {
     @include mobile {

@@ -10,7 +10,11 @@ html {
 
 section {
   height: 100vh;
-  scroll-snap-align: center;
+  position: relative;
+  scroll-snap-align: end;
+  @include mobile{
+  
+  }
   transition:0.4s 
 }
 * {

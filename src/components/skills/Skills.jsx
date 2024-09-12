@@ -72,7 +72,7 @@ const skillsData = [
 const variants = {
   initial: {
     opacity: 0,
-    x: 100,
+    y: 100,
   },
   initialLeft: {
     opacity: 0,
@@ -80,6 +80,7 @@ const variants = {
   },
   animate: {
     opacity: 1,
+    y: 0,
     x: 0,
     transition: {
       duration: 0.5,
@@ -95,25 +96,16 @@ function SingleSkill({ item }) {
       whileInView="animate"
       className="skill"
     >
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        className="skill-header"
-      >
-        <img
+      <motion.div variants={variants} className="skill-header">
+        <motion.img
+          variants={variants}
           src={item.icon}
           alt={`${item.title} icon`}
           className="skill-icon"
         />
-        <motion.h2 initial="initial" whileInView="animate">
-          {item.title}
-        </motion.h2>
+        <motion.h2 variants={variants}>{item.title}</motion.h2>
       </motion.div>
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        className="proficiency"
-      >
+      <motion.div variants={variants} className="proficiency">
         <motion.div
           initial="initial"
           whileInView="animate"
