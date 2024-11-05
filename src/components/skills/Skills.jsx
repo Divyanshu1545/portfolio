@@ -7,35 +7,35 @@ const skillsData = [
   {
     id: 1,
     title: "React",
-    type: "frontend",
+    type: "Frontend",
     prof: 85,
     icon: "/React-icon.svg.png",
   },
   {
     id: 2,
     title: "Flutter",
-    type: "frontend",
+    type: "Frontend",
     prof: 80,
     icon: "/Flutter_logo.svg",
   },
   {
     id: 3,
     title: "CSS",
-    type: "frontend",
+    type: "Frontend",
     prof: 70,
     icon: "/64px-CSS3_logo_and_wordmark.png",
   },
   {
     id: 4,
     title: "JavaScript",
-    type: "frontend",
+    type: "Frontend",
     prof: 90,
     icon: "/javascript.png",
   },
   {
     id: 5,
     title: "HTML",
-    type: "frontend",
+    type: "Frontend",
     prof: 80,
     icon: "/64px-HTML5_logo_and_wordmark.png",
   },
@@ -43,28 +43,28 @@ const skillsData = [
   {
     id: 6,
     title: "SpringBoot",
-    type: "backend",
+    type: "Backend",
     prof: 80,
     icon: "/Spring_Boot.png",
   },
   {
     id: 7,
     title: "MongoDB",
-    type: "backend",
+    type: "Backend",
     prof: 65,
     icon: "/Mongodb-icon.svg",
   },
   {
     id: 8,
     title: "MySQL",
-    type: "backend",
+    type: "Backend",
     prof: 85,
     icon: "/MySQL-Logo.wine.svg",
   },
   {
     id: 9,
     title: "Java",
-    type: "backend",
+    type: "Backend",
     prof: 90,
     icon: "/java.svg",
   },
@@ -131,7 +131,7 @@ function SingleSkill({ item }) {
 }
 
 function Skills() {
-  const [activeTab, setActiveTab] = useState("backend");
+  const [activeTab, setActiveTab] = useState("Backend");
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -146,20 +146,20 @@ function Skills() {
     >
       <motion.div className="tabs">
         <motion.button
-          className={activeTab === "frontend" ? "active" : ""}
-          onClick={() => handleTabChange("frontend")}
+          className={activeTab === "Frontend" ? "active" : ""}
+          onClick={() => handleTabChange("Frontend")}
         ></motion.button>
         <motion.button
           initial="initial"
           whileInView="animate"
-          className={activeTab === "backend" ? "active" : ""}
-          onClick={() => handleTabChange("backend")}
+          className={activeTab === "Backend" ? "active" : ""}
+          onClick={() => handleTabChange("Backend")}
         ></motion.button>
         <motion.button
           initial="initial"
           whileInView="animate"
-          className={activeTab === "others" ? "active" : ""}
-          onClick={() => handleTabChange("others")}
+          className={activeTab === "Other" ? "active" : ""}
+          onClick={() => handleTabChange("Other")}
         ></motion.button>
       </motion.div>
       <motion.div initial="initial" whileInView="animate" className="wrapper">
@@ -168,8 +168,14 @@ function Skills() {
           whileInView="animate"
           className="titleContainer"
         >
-          <motion.h2 initial="initialLeft" whileInView="animate">
-            Technical Skills
+          <motion.h2
+            key={activeTab}
+            initial={{ opacity: 0, y: 50,scale:0.9 }}
+            animate={{ opacity: 1, y: 0, scale:1 }}
+            transition={{ duration: 0.5 }}
+            whileInView="animate"
+          >
+            {activeTab} Skills
           </motion.h2>
         </motion.div>
         <motion.div initial="initial" whileInView="animate" className="skills">
